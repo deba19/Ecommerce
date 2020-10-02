@@ -1,7 +1,12 @@
 const express = require('express');
-const mongoose=require('mongoose')
+const mongoose=require('mongoose');
+const morgan = require('morgan');
+const bodyParser = require('body-parser')
+const cookieParser=require('cookie-parser')
 require("dotenv").config();
 const useRoutes=require('./routes/user');
+const expressValidator = require('express-validator')
+
 //app
 const app= express();
 
@@ -12,7 +17,13 @@ mongoose.connect(process.env.DATABASE,{
     useUnifiedTopology:true
 }).then(()=> console.log("Database connected"))
 
-//Router
+//Middlewares
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(expressValidator());
+
+//Routes Middleware
 app.use(useRoutes)
 
 const port=process.env.PORT || 8000;
