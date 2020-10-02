@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "This project is made using MERN Stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deba19/Ecommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deba19/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/deba19/Ecommerce#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "nodemon": "^2.0.4"
+  }
+}
